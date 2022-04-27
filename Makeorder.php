@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Orders</title>
+	<title>Create Orders</title>
 	<style type="text/css">
 		body{
 			background-color:#000000;
