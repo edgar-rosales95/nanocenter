@@ -11,6 +11,10 @@
 			background-color:#000000;
 		}
 		h1{
+			text-align:center;
+			color:#00FF66;
+		}
+		h3{
 			color:#00FF66;
 		}
 		h5{
@@ -32,7 +36,10 @@
 </head>
 <body>
 <h1> Create Your Account</h1>
+<hr>
+<h3><a href="NanoCenter.html" style="color:#00FF66">Home</a></h3>
 
+<br>
 <form action = "register.php" method ="post">
 	<label>First name:</label> 	<input type = "text" name ="firstname"><br>
 	<label>Last name:</label> 	<input type = "text" name ="lastname"><br>
