@@ -34,7 +34,7 @@
 	<h1> MAKE AN ORDER </h1>
 <br>
 <hr>
-	<h3><a href="NanoCenter.html" style="color:#00FF66">Home</a>
+	<h3><a href="NanoCenter.html" style="color:#ffffff">Home</a>
 	<h2> Select a Product </h2>
 
 <footer>
