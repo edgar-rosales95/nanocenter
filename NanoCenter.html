@@ -1,9 +1,25 @@
 <html>
 <head>
 	<title> Nanocenter</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
 		body{
 			background-color:#000000;
+		}
+		.navbar {
+  			width: 100%;
+  			background-color:#006600;
+  			overflow: auto;
+		}
+		.navbar a {
+  			float: center;
+  			padding: 12px;
+  			color: white;
+  			text-decoration: none;
+  			font-size: 17px;
+		}
+		.navbar a:hover {
+  			background-color: #014a01;
 		}
 		h1{	
 			text-align:center;
@@ -31,10 +47,16 @@
 </head>
 <body>
 	<h1> Welcome To NanoCenter</h1>
+
+<div class="navbar">
 	<h3>
-		<a href="Makeorder.php" style="color:#ffffff">Create an Order</a>
-		<a href="register.php"  style="color:#ffffff">Create an Account</a>
+  	<a href="register.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Create an Order</a>
+	<a href="Makeorder.php" style="color:#ffffff"><i class="fa fa-fw fa-search"></i>Create an Account</a>
+  	<a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  	<a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
 	</h3>
+</div>
+
 
 <br>
 <footer>
