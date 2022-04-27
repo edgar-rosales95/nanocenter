@@ -39,9 +39,9 @@
 </head>
 <body>
 <h1> Create Your NanoCenter Account</h1>
+<br>
 <hr>
 <h3><a href="NanoCenter.html" style="color:#ffffff">Home</a></h3>
-
 <br>
 <h4>Register Account</h4>
 <form action = "register.php" method ="post">
