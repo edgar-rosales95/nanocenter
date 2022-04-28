@@ -55,7 +55,7 @@
 					<input type = "submit" name = "Register">
 <br>
 <footer>
-	<div id="bottom">&copy; NanoCenter</div>
+	<div id="bottom">&copy; nanoCenter</div>
 </footer>
 </form>
 </body>
