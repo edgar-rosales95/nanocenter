@@ -58,7 +58,7 @@
 </div>
 
 <footer>
-	<div id="bottom">&copy; NanoCenter</div>
+	<div id="bottom">&copy; nanoCenter</div>
 </footer>
 </body>
 </html>
