@@ -38,7 +38,7 @@
 	</style>
 </head>
 <body>
-<h1> Create Your NanoCenter Account</h1>
+<h1> Create Your nanoCenter Account</h1>
 <br>
 <hr>
 <h3><a href="NanoCenter.html" style="color:#ffffff">Home</a></h3>
