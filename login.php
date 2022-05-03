@@ -11,6 +11,9 @@
 			text-align:center;
 			color:#00FF66;
 		}
+		h3{
+			color:#00FF66;
+		}
 		.top{
 			margin-top: 100px;	
 		}
@@ -58,6 +61,7 @@
 <body>
 	<h1>Login to nanoCenter</h1>
 	<hr>
+	<h3><a href="NanoCenter.html" style="color:#ffffff">Home</a></h3>
 	<div class="top"></div>
 	<div class="login">
 		<h1>Login</h1>
