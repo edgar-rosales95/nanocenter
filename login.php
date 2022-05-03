@@ -20,7 +20,7 @@
 		.login{
 			color:#00FF66;
 			margin:auto;
-			background:#ffffff;
+			background:#2b2a33;
 			max-width:350px;
 			padding:10px;
 			border-radius:4px;
