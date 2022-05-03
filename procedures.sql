@@ -1,5 +1,5 @@
 DROP PROCEDURE IF EXISTS RegisterUser;
-
+DROP PROCEDURE IF EXISTS AddProduct;
 DELIMITER //
 
 CREATE PROCEDURE `RegisterUser`(uname varchar(30), passhash text)
@@ -13,7 +13,7 @@ BEGIN
     IF @usernameCount > 0 THEN
         SELECT NULL as userid, "Username already exists" AS 'Error';
     ELSE
-        INSERT INTO user (username, password) VALUES (uname, passhash);
+        INSERT INTO Customer (username, password) VALUES (uname, passhash);
         SELECT last_insert_id() AS userid, NULL as 'Error';
         -- FROM user
         -- WHERE username=uname;
@@ -22,84 +22,54 @@ BEGIN
     COMMIT;
 END;
 //
+
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS WritePost;
 
 DELIMITER //
 
-CREATE PROCEDURE WritePost(param_parent int, param_user int, param_content nvarchar(500))
-BEGIN
+CREATE PROCEDURE 'AddPrduct'(productn varchar(100), prices decimal(7,2), amountin int(11))
+BEGIN 
+	START TRANSACTION;
 
-    SELECT COUNT(*) INTO @adminCount
-    FROM user NATURAL JOIN user_roles
-    WHERE user_id = param_user;
+       	SELECT COUNT(*) INTO @productcount
+	from Product
+	where pname = productn;
 
-    INSERT INTO post(parent_post, user_id, content, approved)
-    VALUES (param_parent, param_user, param_content, @adminCount);
-END;
+       	IF @productCount > 0 THEN
+       	    SELECT NULL as pname, "product already exists" AS 'Error';
+        ELSE
+      	    INSERT INTO Customer (pname, price, quantity) VALUES (productn, prices, amountin);
+
+	END IF;
+
+	COMMIT;
+END:
 //
 
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS EditPost;
+
 
 DELIMITER //
 
-CREATE PROCEDURE EditPost(param_post int, param_user int, param_content nvarchar(500))
-BEGIN
+CREATE PROCEDURE 'RemovePrduct'(productn varchar(100), prices decimal(7,2), amountin int(11))
+BEGIN 
+	START TRANSACTION;
 
-    SELECT COUNT(*) INTO @adminCount
-    FROM user NATURAL JOIN user_roles
-    WHERE user_id = param_user;
+       	SELECT pname
+	from Product
+	where quantity = 0;
 
-    UPDATE post
-    SET content=param_content, approved = @adminCount
-    WHERE post_id = param_post AND user_id = param_user;
-END;
+       	IF quantity =  0 THEN
+       	    SELECT NULL as pname, "product is out of stock" AS 'Error';
+
+	END IF;
+
+	COMMIT;
+END:
 //
 
 DELIMITER ;
 
-DROP PROCEDURE IF EXISTS GetRoles;
 
-DELIMITER //
-
-CREATE PROCEDURE `GetRoles`(param_user_id int)
-BEGIN
-    SELECT role.name
-    FROM user_roles NATURAL JOIN role
-    WHERE user_roles.user_id = param_user_id;
-END
-//
-
-DELIMITER ;
-
-DROP PROCEDURE IF EXISTS IsAdmin;
-
-DELIMITER //
-
-CREATE PROCEDURE `IsAdmin`(param_user_id int)
-BEGIN
-    SELECT COUNT(*) AS result
-    FROM user_roles NATURAL JOIN role
-    WHERE user_roles.user_id = param_user_id
-    AND role.name = "admin";
-END
-//
-
-DELIMITER ;
-
-DROP PROCEDURE IF EXISTS GetPosts;
-
-DELIMITER //
-
-CREATE PROCEDURE `GetPosts`()
-BEGIN
-    SELECT *
-    FROM user_posts;
-END
-//
-
-DELIMITER ;
-~
