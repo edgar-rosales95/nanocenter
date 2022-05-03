@@ -1,13 +1,9 @@
-<html>
-<head>
-	<title> Nanocenter Register</title>
+<html lang="en">
+<head>	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scaled=1.0">
+	<title> Nanocenter Login</title>
 	<style type="text/css">
-		label{
-			text-align:center;
-			color:#00FF66;
-			width:100px;
-			display:inline-block;
-		}
 		body{
 			background-color:#000000;
 		}
@@ -15,50 +11,65 @@
 			text-align:center;
 			color:#00FF66;
 		}
-		h3{
-			color:#00FF66;
+		.top{
+			margin-top: 100px;	
 		}
-		h4{		
-			text-align:center;
+		.login{
 			color:#00FF66;
+			margin:auto;
+			background:#ffffff;
+			max-width:350px;
+			padding:10px;
+			border-radius:4px;
 		}
-		h5{
-			color:#00FF66;
+		input[type=text]{
+			display:inline-block;
+			width:100%;
+			padding:10px;
+			box-sizing:border-box;
+			border-radius:4px;
+			border: .5px solid;
+			margin: 10px 0;
+		}
+		input[type=submit]{
+			width:100%;
+			padding:10px;
+			margin:10px 0;
+			border-radius:4px;
+			border:none;
+			background:orange;
+			font-size;20px;
+			cursor:pointer;
 		}
 		footer{
-			text-align:center;
+			color:#00FF66;
 		}
-		#bottom {
+		#bottom{
 			text-align:center;	
-        		position: absolute;
+        		position: fixed;
         		bottom: 0;
         		width: 100%;
         		color: #ffffff;
 			background-color:#006600;
 			padding: 15px 0;
-      		}
+      		}		
 	</style>
 </head>
 <body>
-<h1>nanoCenter</h1>
-<br>
-<hr>
-<h3><a href="NanoCenter.html" style="color:#ffffff">Home</a></h3>
-<center>
-	<div style="border:5px double white; text-align:center; width:30%">
-		<h3>Login</h3>
-	</div>
-</center>
-</table>
-<form action = "login.php" method ="post">
-	<label style="text-align: center;">Username:</label> 	<input type = "text" name ="username"><br>
-	<label style="text-align: center;">Passsword:</label> 	<input type = "password" name ="password"><br>
-<br>
-					<input type = "submit" name = "Register">
-<br>
-<footer>
-	<div id="bottom">&copy; nanoCenter</div>
-</footer>
-</form>
+	<h1>Login to nanoCenter</h1>
+	<hr>
+	<div class="top"></div>
+	<div class="login">
+		<h1>Login</h1>
+		<form action="">
+			<label for="username">Username</label>
+			<input type="text">
+			<label for="password">Password</label>
+			<input type="text">
+			<input type="submit" value="Login">
+	<footer>
+		<div id="bottom">&copy; nanoCenter</div>
+	</footer>
+		</form>
 </body>
 </html>
