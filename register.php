@@ -23,6 +23,9 @@
 		h5{
 			color:#00FF66;
 		}
+		p{
+			color:#00FF66;
+		}
 		footer{
 			text-align:center;
 		}
@@ -54,6 +57,10 @@
 <br>
 					<input type = "submit" name = "Register">
 <br>
+<br>
+<p>Already have an Account?</p>
+<h3><a href="login.php" style="color:#ffffff">Login</a></h3>
+
 <footer>
 	<div id="bottom">&copy; nanoCenter</div>
 </footer>
