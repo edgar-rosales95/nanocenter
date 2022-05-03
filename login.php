@@ -45,11 +45,13 @@
 			cursor:pointer;
 		}
 		footer{
-			color:#00FF66;
+			text-align:center;
+			color:#ffffff;
+			background-color:#006600;
+			padding 15px 0;
 		}
-		#bottom{
-			text-align:center;	
-        		position: fixed;
+		.bottom{	
+        		position: absolute;
         		bottom: 0;
         		width: 100%;
         		color: #ffffff;
@@ -59,6 +61,7 @@
 	</style>
 </head>
 <body>
+	<main>
 	<h1>Login to nanoCenter</h1>
 	<hr>
 	<h3><a href="NanoCenter.html" style="color:#ffffff">Home</a></h3>
@@ -71,9 +74,10 @@
 			<label for="password">Password</label>
 			<input type="text">
 			<input type="submit" value="Login">
-	<footer>
-		<div id="bottom">&copy; nanoCenter</div>
-	</footer>
 		</form>
+	</main>
+	<footer>
+		<div class="bottom">&copy; nanoCenter</div>
+	</footer>
 </body>
 </html>
