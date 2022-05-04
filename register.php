@@ -51,7 +51,7 @@
 			padding 15px 0;
 		}
 		.bottom{
-        		position: absolute;
+        		position: fixed;
         		bottom: 0;
         		width: 100%;
         		color: #ffffff;
