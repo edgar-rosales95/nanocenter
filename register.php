@@ -64,7 +64,7 @@
 	<main>
 	<h1>Create Your nanoCenter Account</h1>
 	<hr>
-	<h3><a href="NanoCenter.html" style="color:#ffffff">Home</a></h3>
+	<h3><a href="home.html" style="color:#ffffff">Home</a></h3>
 	<div class="top"></div>
 	<div class="register">
 		<h1>Register</h1>
