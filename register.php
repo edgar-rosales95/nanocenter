@@ -1,12 +1,9 @@
-<html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scaled=1.0">
 	<title> Nanocenter Register</title>
 	<style type="text/css">
-		label{
-			color:#00FF66;
-			width:100px;
-			display:inline-block;
-		}
 		body{
 			background-color:#000000;
 		}
@@ -17,20 +14,43 @@
 		h3{
 			color:#00FF66;
 		}
-		h4{
-			color:#00FF66;
+		.top{
+			margin-top: 100px;
 		}
-		h5{
+		.register{
 			color:#00FF66;
+			margin:auto;
+			background:#2b2a33;
+			max-width:350px;
+			padding:10px;
+			border-radius:4px;
 		}
-		p{
-			color:#00FF66;
+		input[type=text]{
+			display:inline-block;
+			width:100%;
+			padding:10px;
+			box-sizing:border-box;
+			border-radius:4px;
+			border: .5px solid;
+			margin: 10px 0;
+		}
+		input[type=submit]{
+			width:100%;
+			padding:10px;
+			margin:10px 0;
+			border-radius:4px;
+			border:none;
+			background:orange;
+			font-size;20px;
+			cursor:pointer;
 		}
 		footer{
 			text-align:center;
+			color:#ffffff;
+			background-color:#006600;
+			padding 15px 0;
 		}
-		#bottom {
-			text-align:center;	
+		.bottom{
         		position: absolute;
         		bottom: 0;
         		width: 100%;
@@ -41,30 +61,33 @@
 	</style>
 </head>
 <body>
-<h1> Create Your nanoCenter Account</h1>
-<br>
-<hr>
-<h3><a href="NanoCenter.html" style="color:#ffffff">Home</a></h3>
-<br>
-<h4>Register Account</h4>
-<form action = "register.php" method ="post">
-	<label>First name:</label> 	<input type = "text" name ="firstname"><br>
-	<label>Last name:</label> 	<input type = "text" name ="lastname"><br>
-	<label>Username:</label> 	<input type = "text" name ="username"><br>
-	<label>Passsword:</label> 	<input type = "password" name ="password"><br>
-	<label>Phone number:</label> 	<input type = "text" name ="phone"><br>
-	<label>Address:</label> 	<input type = "text" name ="address"><br>
-<br>
-					<input type = "submit" name = "Register">
-<br>
-<br>
-<p>Already have an Account?</p>
-<h3><a href="login.php" style="color:#ffffff">Login</a></h3>
-
-<footer>
-	<div id="bottom">&copy; nanoCenter</div>
-</footer>
-</form>
+	<main>
+	<h1>Create Your nanoCenter Account</h1>
+	<hr>
+	<h3><a href="NanoCenter.html" style="color:#ffffff">Home</a></h3>
+	<div class="top"></div>
+	<div class="register">
+		<h1>Register</h1>
+		<form action="">
+            <label for="first Name">First Name</label>
+			<input type="text">
+            <label for="last Name">Last Name</label>
+			<input type="text">
+			<label for="username">Username</label>
+			<input type="text">
+			<label for="password">Password</label>
+			<input type="text">
+			<label for="phone number">Phone Number</label>
+			<input type="text">
+			<label for="address">Address</label>
+			<input type="text">
+			<input type="submit" value="Login">
+            <p>Already have an account? <a href="login.php" style="color:#ffffff"> Login</a></p>
+		</form>
+	</main>
+	<footer>
+		<div class="bottom">&copy; nanoCenter</div>
+	</footer>
 </body>
 </html>
 <?php
