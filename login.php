@@ -74,6 +74,10 @@
 			<label for="password">Password</label>
 			<input type="text">
 			<input type="submit" value="Login">
+			<br>
+			<p>Don't have an account? <a href="register.php" style="color:#ffffff">Create Account</a></p>
+
+
 		</form>
 	</main>
 	<footer>
