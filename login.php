@@ -81,7 +81,7 @@
 		</form>
 	</main>
 	<footer>
-		<div class="bottom">&copy; nanoCenter</div>
+		<div class="bottom"><a href="contactinfo.html" style="color:#ffffff"><i class="fa fa-fw fa-user"></i>Customer Service</a> &copy; nanoCenter</div>
 	</footer>
 </body>
 </html>
