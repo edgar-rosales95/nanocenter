@@ -64,7 +64,6 @@
 	<main>
 	<h1>Create Your nanoCenter Account</h1>
 	<hr>
-	<h3><a href="home.html" style="color:#ffffff">Home</a></h3>
 	<div class="top"></div>
 	<div class="register">
 		<h1>Register</h1>
@@ -84,6 +83,7 @@
 			<input type="submit" value="Login">
             <p>Already have an account? <a href="login.php" style="color:#ffffff"> Login</a></p>
 		</form>
+		<input type= 'button' onclick='javascript:history.back();return false;' value='Previous'>
 	</main>
 	<footer>
 		<div class="bottom"><a href="contactinfo.html" style="color:#ffffff"><i class="fa fa-fw fa-user"></i>Customer Service</a> &copy; nanoCenter</div>
