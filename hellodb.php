@@ -34,7 +34,7 @@ function get_connection() {
 
 // Get a connection, prepare a query, and execute it
 $db = get_connection();
-$query = $db->prepare("SELECT Fname, Lname FROM Customer");
+$query = $db->prepare("SELECT pname, price FROM Product");
 $query->execute();
 
 // Getting the results will bring the results from the database into PHP.
@@ -65,8 +65,8 @@ while ($row = $result->fetch_assoc()) {
 echo "<select name='dropdown'>";
 
 foreach($rows as $row) {
-    $rowid = $row['Fname'];
-    $rowdata = $row['Lname'];
+    $rowid = $row['pname'];
+    $rowdata = $row['price'];
     echo "<option value='$rowid'>$rowdata</option>";
 }
 
@@ -82,7 +82,7 @@ if (isset($_POST["something"])) {
 
 if (isset($_POST["dropdown"])) {
     for($i = 0; $i < count($rows); $i++) {
-        if ($rows[$i]['Fname'] == $_POST['dropdown']) {
+        if ($rows[$i]['pname'] == $_POST['dropdown']) {
             echo "You entered " . $_POST['dropdown'] . " <br>";
         }
     }
