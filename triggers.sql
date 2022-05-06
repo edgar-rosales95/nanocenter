@@ -7,22 +7,15 @@ CREATE TRIGGER UserDelete
 BEFORE DELETE ON user
 FOR EACH ROW
 BEGIN   
-    INSERT INTO user_history (user_id, username)
+    INSERT INTO Deleted_user (ID, username)
     SELECT user_id, username
-    FROM user
-    WHERE user.user_id = OLD.user_id;
+    FROM Customer
+    WHERE Cutomer.user_id = OLD.user_id;
 END
 //
 
-CREATE TRIGGER UserUpdate
-BEFORE UPDATE ON user
-FOR EACH ROW
-BEGIN
-    INSERT INTO user_history VALUES(OLD.user_id, OLD.username, NOW());
-END
-//
 
-CREATE TRIGGER EditPost
+CREATE TRIGGER Edit_password;
 BEFORE UPDATE ON post
 FOR EACH ROW
 BEGIN
