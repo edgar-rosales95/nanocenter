@@ -67,12 +67,10 @@
 	<div class="top"></div>
 	<div class="login">
 		<h1>Login</h1>
-		<form action="">
-			<label for="username">Username</label>
-			<input type="text">
-			<label for="password">Password</label>
-			<input type="text">
-			<input type="submit" value="Login">
+		<form action="login.php" method= "POST">
+			<label for="username">Username</label>	<input type="text" name= "username"> 
+			<label for="password">Password</label>	<input type="text" name= "password">
+			<input type="submit" name= "Login" value="Login">
 			<br>
 			<p>Don't have an account? <a href="register.php" style="color:#ffffff">Create Account</a></p>
 		</form>
@@ -83,3 +81,61 @@
 	</footer>
 </body>
 </html>
+
+
+<?php
+
+require_once "getconnection.php";
+
+if (isset($_SESSION["error"])) {
+	echo $_SESSION["error"];
+	unset($_SESSION["error"]);
+	die();
+}
+
+if (isset($_POST['Login'])) {
+	unset($_POST['Login']);
+	$db = get_connection();
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$validation = $db ->prepare("select * from Customer where username = ?");
+	$validation -> bind_param('s', $username);
+
+	if($validation ->execute()){
+		$login_result = $validation -> get_result();
+
+		$loginInfo = $login_result -> fetch_assoc();
+
+
+		if($loginInfo === False) {
+
+			$_SESSION['error'] = "error: username and or passowrd was not found";
+		}
+
+		else {
+			$isGood = password_verify($password, $loginInfo["password"]);
+
+			if ($isGood) {
+				session_start();
+
+				$_SESSION["Customer_id"] = $loginInfo["ID"];
+				$_SESSION["username"] = $loginInfo["username"];
+
+
+
+				header("Location: NanoCenter.php");
+			}
+			else {
+				$_SESSION["error"] = "Error: the username and/or password was not found";
+				header("Location: home.html");
+			}
+		}
+	}
+}	
+
+	else {
+		echo "Error getting result: login info not found";
+		die();
+	}
+
+?>

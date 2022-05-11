@@ -1,4 +1,3 @@
-
 <html>
 <head>
 	<title> Nanocenter</title>
@@ -47,12 +46,14 @@
 	</style>
 </head>
 <body>
-	<h1> My Cart</h1>
+	<h1> Welcome To nanoCenter</h1>
 <div class="navbar">
 	<h3>
   	<a href="Makeorder.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Create an Order</a>
-  	<a href="NanoCenter.php"><i class="fa fa-fw fa-envelope"></i>Main</a>
-  	<a href="Myaccount.php"><i class="fa fa-fw fa-user"></i>My Account</a>
+  	<a href="Cart.php"><i class="fa fa-fw fa-envelope"></i>Cart</a>
+	<a href="Myaccount.php"><i class="fa fa-fw fa-user"></i>My Account</a>
+	<a href="Employee.php"><i class="fa fa-fw fa-user"></i>Employee</a>
+
 	</h3>
 </div>
 

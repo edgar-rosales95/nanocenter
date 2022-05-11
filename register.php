@@ -67,21 +67,18 @@
 	<div class="top"></div>
 	<div class="register">
 		<h1>Register</h1>
-		<form action="">
-            <label for="first Name">First Name</label>
-			<input type="text">
-            <label for="last Name">Last Name</label>
-			<input type="text">
-			<label for="username">Username</label>
-			<input type="text">
-			<label for="password">Password</label>
-			<input type="text">
-			<label for="phone number">Phone Number</label>
-			<input type="text">
-			<label for="address">Address</label>
-			<input type="text">
-			<input type="submit" value="Login">
-            <p>Already have an account? <a href="login.php" style="color:#ffffff"> Login</a></p>
+
+<form action="register.php" method = "POST"> 
+            <label for="first Name">First Name</label>		<input type="text" name ="firstname">
+            <label for="last Name">Last Name</label>		<input type="text" name ="lastname">
+            <label for="username">Username</label>		<input type="text" name ="username">
+	    <label for="password">Password</label><br>		<input type="password" name ="password"><br>
+	    <label for="phone number">Phone Number</label>	<input type="text" name ="phone">
+	    <label for="address">Address</label>		<input type="text" name = "address">
+			<input type="submit" value="Registure" name= "Register">
+	   
+
+	 <p>Already have an account? <a href="login.php" style="color:#ffffff"> Login</a></p>
 		</form>
 		<input type= 'button' onclick='javascript:history.back();return false;' value='Previous'>
 	</main>
@@ -91,21 +88,37 @@
 </body>
 </html>
 <?php
- require("getconnection.php");
+require_once "getconnection.php";
+
+
 
 
 
 if (isset($_POST["Register"])){
-	echo var_dump($_POST);
+    unset($_POST["Register"]);
+//	echo var_dump($_POST);
 
-	$db = get_connection();
+    $db = get_connection();
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    if (strlen($username) == 0 || strlen($password) == 0){
+	    $_SESSION['error'] = "Username and/or password cannot be empty!";
+	    header("Location: register.php");
+    }
+
+	
+
 
 	$insert = $db->prepare("Insert into Customer (Fname, Lname, address, phone, username, password)
 		Values(?, ?, ?, ?, ?, ?)");
 
 	$insert->bind_param("sssiss", $_POST["firstname"], $_POST["lastname"],
-		$_POST["address"], $_POST["phone"], $_POST["username"], $_POST["password"]);
+		$_POST["address"], $_POST["phone"], $_POST["username"], password_hash($_POST["password"], PASSWORD_DEFAULT));
 
-	$insert->execute();
+        $insert->execute();
+
+	
+
+
 }
 ?>

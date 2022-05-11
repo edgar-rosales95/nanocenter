@@ -63,6 +63,24 @@
 </body>
 </html>
 <?php
+
+if (isset($_SESSION["error"])) {
+    echo $_SESSION["error"] . "<br><br>";
+    unset($_SESSION["error"]);
+    //die();
+}
+
+if (isset($_SESSION['id'])) {
+    // Code to handle registered user interactions
+
+}
+else {
+    header("Location: home.html");
+
+
+
+
+
 $db = get_connection();
 $query = $db->prepare("SELECT pname from Product");
 $query->execute();
@@ -82,5 +100,11 @@ while ($row = $result->fetch_assoc()){
 
 	echo " $rowtext <br>";
 }
+
+
+
+ 
+
+
 
 ?>
