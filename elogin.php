@@ -68,8 +68,7 @@
 	<div class="login">
 		<h1>Employee Login</h1>
 		<form action="login.php" method= "POST">
-			<label for="username">Username</label>	<input type="text" name= "username"> 
-			<label for="password">Password</label>	<input type="text" name= "password">
+			<label for="employee">Employee ID</label><input type="text" name= "username"> 
 			<input type="submit" name= "Login" value="Login">
 			<br>
 		</form>
