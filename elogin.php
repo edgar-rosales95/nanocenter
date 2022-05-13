@@ -2,8 +2,8 @@
 <head>	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scaled=1.0">
-	<title> Nanocenter Login</title>
-	<style type="text/css">
+	<title> Nanocenter Employee Login</title>
+	<style type="text/css"> 
 		body{
 			background-color:#000000;
 		}
@@ -67,8 +67,9 @@
 	<div class="top"></div>
 	<div class="login">
 		<h1>Employee Login</h1>
-		<form action="login.php" method= "POST">
-			<label for="employee">Employee ID</label><input type="text" name= "username"> 
+		<form action="elogin.php" method= "POST">
+			<label for="wSSN">Employee ID</label>	<input type="text" name= "wSSN"> 
+			<label for="wpassword">Password</label>	<input type="text" name= "wpassword">
 			<input type="submit" name= "Login" value="Login">
 			<br>
 		</form>
@@ -80,3 +81,60 @@
 </body>
 </html>
 
+
+<?php
+
+require_once "getconnection.php";
+
+if (isset($_SESSION["error"])) {
+	echo $_SESSION["error"];
+	unset($_SESSION["error"]);
+	die();
+}
+
+if (isset($_POST['Login'])) {
+	unset($_POST['Login']);
+	$db = get_connection();
+	$eID = $_POST['wSSN'];
+	$password = $_POST['wpassword'];
+	$validation = $db ->prepare("select * from Customer where wSSN = ?");
+	$validation -> bind_param('s', $ID);
+
+	if($validation ->execute()){
+		$login_result = $validation -> get_result();
+
+		$loginInfo = $login_result -> fetch_assoc();
+		
+
+		if($loginInfo === False) {
+
+			$_SESSION['error'] = "error: username and or passowrd was not found";
+		}
+
+		else {
+			$isGood = password_verify($password, $loginInfo["wpassword"]);
+
+			if ($isGood) {
+				session_start();
+
+				$_SESSION["Customer_id"] = $loginInfo["ID"];
+				$_SESSION["wSSN"] = $loginInfo["wSSN"];
+
+
+
+				header("Location: Employee.php");
+			}
+			else {
+				$_SESSION["error"] = "Error: the username and/or password was not found";
+				header("Location: elogin.php");
+			}
+		}
+	}
+}	
+
+	else {
+		echo "Error getting result: login info not found";
+		die();
+	}
+
+?>

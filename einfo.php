@@ -1,4 +1,5 @@
 
+
 <html>
 <head>
 	<title> Nanocenter</title>
@@ -50,8 +51,9 @@
 	<h1> Emlpoyee</h1>
 <div class="navbar">
 	<h3>
-  	<a href="productmanagement.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
-  	<a href="einfo.php"><i class="fa fa-fw fa-user"></i>My Account</a>
+  	<a href="Makeorder.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
+  	<a href="Cart.php"><i class="fa fa-fw fa-envelope"></i></a>
+	<a href="einfo.php"><i class="fa fa-fw fa-user"></i>My Account</a>
 	</h3>
 </div>
 
