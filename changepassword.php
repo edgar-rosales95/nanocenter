@@ -1,3 +1,5 @@
+
+
 <html>
 <head>
 	<title> Nanocenter</title>
@@ -36,79 +38,26 @@
 		}
 		#bottom {
 			text-align:center;	
-        		position: fixed;
+        		position: absolute;
         		bottom: 0;
         		width: 100%;
         		color: #ffffff;
 			background-color:#006600;
 			padding: 15px 0;
       		}
-		#slider{
-			overflow: hidden;
-		}
-		#slider figure{
-			position: relative;
-			width:500%;
-			margin: 0;
-			left 0;
-		animation: 20s slider infinite;
-		}
-		#slider figure img{
-			float: left;
-			width: 20%;
-		}
-		@keyframes slider{
-			0% {
-				left: 0%;
-			}
-			20% {
-				left: 0%;
-			}
-			25% {
-				left: -100%;
-			}
-			45% {
-				left: -100%;
-			}
-			50% {
-				left: -200%;
-			}
-			70% {
-				left: -200%;
-			}
-			75% {
-				left: -300%;
-			}
-			95% {
-				left: -300%;
-			}
-			100% {
-				left: -400%;
-			}
-		}
-
 	</style>
 </head>
 <body>
-	<h1> Welcome To nanoCenter</h1>
+	<h1> Emlpoyee</h1>
 <div class="navbar">
 	<h3>
-  	<a href="Makeorder.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Create an Order</a>
-  	<a href="#"><i class="fa fa-fw fa-envelope"></i>Cart</a>
-  	<a href="#"><i class="fa fa-fw fa-user"></i>My Account</a>
+  	<a href="Makeorder.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
+  	<a href="Cart.php"><i class="fa fa-fw fa-envelope"></i></a>
+  	<a href="Myaccount.php"><i class="fa fa-fw fa-user"></i>My Account</a>
 	</h3>
 </div>
-<br>
-	<div id="slider">
-		<figure>
-			<img src="newgpu.jpg">
-			<img src="newcpu.jpg">
-			<img src="newcase.jpg">
-			<img src="newfans2.jpg">
-			<img src="newgpu.jpg">
-		</figure>
-	</div>
 
+<br>
 <footer>
 	<div id="bottom"><a href="contactinfo.html" style="color:#ffffff"><i class="fa fa-fw fa-user"></i>Customer Service</a> &copy; nanoCenter</div>
 </footer>
