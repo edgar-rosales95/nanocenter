@@ -75,7 +75,7 @@
 	    <label for="password">Password</label><br>		<input type="password" name ="password"><br>
 	    <label for="phone number">Phone Number</label>	<input type="text" name ="phone">
 	    <label for="address">Address</label>		<input type="text" name = "address">
-			<input type="submit" value="Registure" name= "Register">
+			<input type="submit" value="Register" name= "Register">
 	   
 
 	 <p>Already have an account? <a href="login.php" style="color:#ffffff"> Login</a></p>
