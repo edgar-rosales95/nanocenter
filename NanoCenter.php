@@ -95,7 +95,6 @@
   	<a href="Makeorder.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Create an Order</a>
   	<a href="Cart.php"><i class="fa fa-fw fa-envelope"></i>Cart</a>
 	<a href="Myaccount.php"><i class="fa fa-fw fa-user"></i>My Account</a>
-	<a href="Employee.php"><i class="fa fa-fw fa-user"></i>Employee</a>
 
 	</h3>
 </div>
