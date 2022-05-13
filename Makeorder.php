@@ -23,7 +23,7 @@
 		}
 		.sidenav {
 			height:70%;
-  			width: 300px;
+  			width: 500px;
   			position: left;
   			z-index: 1;
   			top: 20px;
