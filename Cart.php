@@ -6,6 +6,7 @@
 	<style type="text/css">
 		body{
 			background-color:#000000;
+			color: white;
 		}
 		.navbar {
   			width: 100%;
