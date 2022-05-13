@@ -81,7 +81,7 @@
             <label for="first Name">First Name</label>		<input type="text" name ="firstname">
             <label for="last Name">Last Name</label>		<input type="text" name ="lastname">
             <label for="username">Username</label>		<input type="text" name ="username">
-	    <label for="password">Password</label><br>		<input type="password" name ="password" style="width:350px; height:35px;">
+	    <label for="password">Password</label><br>		<input type="password" name ="password" style="width:350px; height:35px;"><br><br>
 	    <label for="phone number">Phone Number</label>	<input type="text" name ="phone">
 	    <label for="address">Address</label>		<input type="text" name = "address">
 			<input type="submit" value="Register" name= "Register">
