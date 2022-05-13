@@ -4,6 +4,9 @@
 	<meta name="viewport" content="width=device-width, initial-scaled=1.0">
 	<title> Nanocenter Employee Login</title>
 	<style type="text/css"> 
+		br{
+			line-height: 10px;
+		}
 		body{
 			background-color:#000000;
 		}
@@ -69,7 +72,7 @@
 		<h1>Employee Login</h1>
 		<form action="elogin.php" method= "POST">
 			<label for="wSSN">Employee ID</label>	<input type="text" name= "wSSN"> 
-			<label for="wpassword">Password</label>	<input type="text" name= "wpassword">
+			<label for="wpassword">Password</label><br><br>	<input type="password" name= "wpassword" style="width:350px; height:35px;">
 			<input type="submit" name= "Login" value="Login">
 			<br>
 		</form>

@@ -5,8 +5,8 @@
 	<title> Nanocenter Login</title>
 	<style type="text/css">
 		br{
-				line-height: 10px;
-			}
+			line-height: 10px;
+		}
 		body{
 			background-color:#000000;
 		}
