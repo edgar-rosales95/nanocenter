@@ -5,8 +5,8 @@
 	<title> Nanocenter Login</title>
 	<style type="text/css">
 		br{
-			line-height: 10px;
-		}
+				line-height: 10px;
+			}
 		body{
 			background-color:#000000;
 		}
@@ -72,7 +72,7 @@
 		<h1>Login</h1>
 		<form action="login.php" method= "POST">
 			<label for="username">Username</label>	<input type="text" name= "username"> 
-			<label for="password">Password</label><br><br>	<input type="password" name= "password" style="width:350px; height:35px;">
+			<label for="password">Password</label><br><br>	<input type="password" name= "password" style="width:350px; height:35px;"><br><br>
 			<input type="submit" name= "Login" value="Login">
 			<br>
 			<p>Don't have an account? <a href="register.php" style="color:#ffffff">Create Account</a></p>
