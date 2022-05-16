@@ -39,7 +39,7 @@ BEGIN
        	IF @productCount > 0 THEN
        	    SELECT NULL as pname, "product already exists" AS 'Error';
         ELSE
-      	    INSERT INTO Customer (pname, price, quantity) VALUES (productn, prices, amountin);
+      	    INSERT INTO Product (pname, price, quantity) VALUES (productn, prices, amountin);
 
 	END IF;
 
@@ -53,7 +53,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE 'RemovePrduct'(productn varchar(100), prices decimal(7,2), amountin int(11))
+CREATE PROCEDURE 'RemovePrduct'(productn varchar(100))
 BEGIN 
 	START TRANSACTION;
 
@@ -63,6 +63,11 @@ BEGIN
 
        	IF quantity =  0 THEN
        	    SELECT NULL as pname, "product is out of stock" AS 'Error';
+	    --delete from product table 
+ 	    -- delete from product type
+
+	DELETE FROM PRODUCT WHERE pname = productn AND quantity = 0;
+	   
 
 	END IF;
 

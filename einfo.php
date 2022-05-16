@@ -1,4 +1,8 @@
+<?php
 
+session_start();
+
+?>
 
 <html>
 <head>
@@ -51,11 +55,35 @@
 	<h1> Emlpoyee</h1>
 <div class="navbar">
 	<h3>
-  	<a href="Makeorder.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
-  	<a href="Cart.php"><i class="fa fa-fw fa-envelope"></i></a>
+  	<a href="productmamagement.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
 	<a href="einfo.php"><i class="fa fa-fw fa-user"></i>My Account</a>
 	</h3>
 </div>
+
+</div>
+
+<?php
+
+require_once "getconnection.php";
+var_dump ($_SESSION);
+
+$db = get_connection();
+
+$einfo = $db->prepare("SELECT * FROM Worker where SSN = ?");
+
+$einfo->bind_param("i", $_SESSION["wSSN"]);
+
+if ($einfo->execute()) {
+    $result = $einfo->get_result();
+    if ($edata = $result->fetch_assoc()) {
+        echo "Employee data:<br>";
+        echo $edata["Fname"] . " " . $edata["Lname"] . "<br>";
+    }
+}
+
+?>
+
+
 
 <br>
 <footer>
@@ -63,4 +91,7 @@
 </footer>
 </body>
 </html>
+
+
+
 

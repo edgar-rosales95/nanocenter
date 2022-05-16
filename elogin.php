@@ -101,7 +101,7 @@ if (isset($_POST['Login'])) {
 	$eID = $_POST['wSSN'];
 	$password = $_POST['wpassword'];
 	$validation = $db ->prepare("select * from Customer where wSSN = ?");
-	$validation -> bind_param('s', $ID);
+	$validation -> bind_param('s', $eID);
 
 	if($validation ->execute()){
 		$login_result = $validation -> get_result();
@@ -115,7 +115,7 @@ if (isset($_POST['Login'])) {
 		}
 
 		else {
-			$isGood = password_verify($password, $loginInfo["wpassword"]);
+			$isGood = ($password === $loginInfo["wpassword"]);
 
 			if ($isGood) {
 				session_start();

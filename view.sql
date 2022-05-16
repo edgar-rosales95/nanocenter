@@ -1,4 +1,5 @@
 Drop view if exists emplyees;
+
 drop view if exists Latest_orders;
 drop view if exists fulfilled;
 
