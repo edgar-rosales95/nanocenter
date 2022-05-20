@@ -29,7 +29,7 @@
 		.top{
 			margin-top: 100px;
 		}
-		.register{
+		.Shiporders{
 			color:#00FF66;
 			margin:auto;
 			background:#2b2a33;
@@ -78,10 +78,10 @@
 	<h1>Product Management</h1>
 	<hr>
 	<div class="top"></div>
-	<div class="register">
+	<div class="Shiporders">
 		<h1> Shipping Orders</h1>
 
-<form action="register.php" method = "POST"> 
+<form action="Shiporders.php" method = "POST"> 
             <label for="orderid">Order ID</label>		<input type="text" name ="oid">
 			<input type="submit" value="Shipped" name= "submitd">
 	   
@@ -102,10 +102,9 @@ $db = get_connection();
 	
 
 
-	$insert = $db->prepare("Update Orders set shipdate = 'date' where orderid  = ? (orderid)
-		Values(?)");
+	$insert = $db->prepare("Update Orders set shipdate = 'date' where orderid  = ?");
 
-	$insert->bind_param("i", $_POST["iod"]);
+	$insert->bind_param("i", $_POST["oid"]);
         $insert->execute();
 
 	
