@@ -82,6 +82,7 @@
 
 <form action="Deleteproduct.php" method = "POST"> 
             <label for="productid">Product ID</label>		<input type="text" name ="productid">
+			<label for="pname">Product Name</label>		<input type="text" name ="proname">
 			<input type="submit" value="Delete Product" name= "submit">
 	   
 
@@ -96,25 +97,21 @@
 <?php
 require_once "getconnection.php";
 
-
-
-
-
-
     $db = get_connection();
-   
-	
 
-
-	$delete = $db->prepare("delete from Product where productid = ? ");
-		
+	$delete = $db->prepare("delete from Product (productid)
+		where productid = ?");
 
 	$delete->bind_param("i", $_POST["productid"]);
 
-        $delete->execute();
+    $delete->execute();
 
+	$delete = $db->prepare("delete from Producttype (pname)
+		where pname = ?");
+
+	$delete->bind_param("s", $_POST["proname"]);
 	
-
-
+		$delete->execute();
+     		
 
 ?>
