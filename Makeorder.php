@@ -66,7 +66,7 @@
 			color:#00FF66;
 			margin:auto;
 			background:#2b2a33;
-			max-width:350px;
+			max-width:450px;
 			padding:10px;
 			border-radius:4px;
 		}
