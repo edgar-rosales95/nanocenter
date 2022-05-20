@@ -12,6 +12,7 @@ session_start();
 		body{
 			background-color:#000000;
 			color:white;
+			font-size:25px;
 		}
 		.navbar {
 			left: 0;
@@ -102,7 +103,7 @@ session_start();
 		.sidenav-main {
 			display: grid;
   			width: 100%;
-			height: 40%;
+			height: 20%;
   			background: #000000;
   			overflow-x: hidden;
 			border: 1px solid black;
