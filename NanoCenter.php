@@ -1,7 +1,6 @@
 <html>
 <head>
 	<title> Nanocenter</title>
-	<link rel="shortcut icon" href="nanoCenter.gif">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
 		body{
@@ -39,7 +38,6 @@
 			text-align:center;	
         		position: fixed;
         		bottom: 0;
-				left: 0;
         		width: 100%;
         		color: #ffffff;
 			background-color:#006600;
@@ -110,6 +108,33 @@
 			<img src="newgpu.jpg">
 		</figure>
 	</div>
+	<script>
+	var favicon_images = [
+					'nanoCenter1.png',
+					'nanoCenter1.png',
+					'nanoCenter2.png',
+					'nanoCenter2.png'
+                ],
+    image_counter = 0; // To keep track of the current image
+
+setInterval(function() {
+    // remove current favicon
+    if(document.querySelector("link[rel='icon']") !== null)
+        document.querySelector("link[rel='icon']").remove();
+    if(document.querySelector("link[rel='shortcut icon']") !== null)
+        document.querySelector("link[rel='shortcut icon']").remove();
+        
+    // add new favicon image
+    document.querySelector("head").insertAdjacentHTML('beforeend', '<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/gif">');
+    
+    // If last image then goto first image
+    // Else go to next image    
+    if(image_counter == favicon_images.length -1)
+        image_counter = 0;
+    else
+        image_counter++;
+}, 200);
+</script>
 <footer>
 	<div id="bottom"><a href="contactinfo.html" style="color:#ffffff"><i class="fa fa-fw fa-user"></i>Customer Service</a> &copy; nanoCenter</div>
 </footer>
