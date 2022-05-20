@@ -88,6 +88,10 @@
 				left: -400%;
 			}
 		}
+		.image-resize {
+			width: 800;
+			height: 600;
+		}
 
 	</style>
 </head>
@@ -106,11 +110,11 @@
 <br>
 	<div id="slider">
 		<figure>
-			<img src="images/product_managment/center_view_warehosue.jpg">
-			<img src="images/product_managment/peeps_working_masses.jpg">
-			<img src="images/product_managment/top_view_warehouse.jpg">
-			<img src="newfans2.jpg">
-			<img src="newgpu.jpg">
+			<img src="images/product_managment/center_view_warehosue.jpg" class="image-resize">
+			<img src="images/product_managment/peeps_working_masses.jpg" class="image-resize">
+			<img src="images/product_managment/top_view_warehouse.jpg" class="image-resize">
+			<img src="images/product_managment/peeps_working_masses.jpg" class="image-resize">
+			<img src="images/product_managment/center_view_warehosue.jpg" class="image-resize">
 		</figure>
 	</div>
 	<script>
