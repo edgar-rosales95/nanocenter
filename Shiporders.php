@@ -83,7 +83,7 @@
 
 <form action="Shiporders.php" method = "POST"> 
             <label for="orderid">Order ID</label>		<input type="text" name ="oid">
-			<input type="submit" value="Shipped" name= "submitd">
+			<input type="submit" value="Shipped" name= "submit">
 	   
 
 		</form>
@@ -102,7 +102,7 @@ $db = get_connection();
 	
 
 
-	$insert = $db->prepare("Update Orders set shipdate = 'date' where orderid  = ?");
+	$insert = $db->prepare("Update Orders set shipdate = CURRENT_DATE where orderid  = ?");
 
 	$insert->bind_param("i", $_POST["oid"]);
         $insert->execute();
