@@ -11,6 +11,7 @@ session_start();
 	<style type="text/css">
 		body{
 			background-color:#000000;
+			color:white;
 		}
 		.navbar {
   			width: 100%;
@@ -78,6 +79,8 @@ if ($einfo->execute()) {
     if ($edata = $result->fetch_assoc()) {
         echo "Employee data:<br>";
         echo $edata["Fname"] . " " . $edata["Lname"] . " " . $edata["DOB"] .  " " . $edata["Address"] .  " $ " . $edata["Salary"] .  "<br>";
+	    echo "Employee data:<br>";
+	    echo $edata["Fname"] . " " . $edata["Lname"] . "<br>";
     }
 }
 
