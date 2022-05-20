@@ -1,16 +1,16 @@
 DROP TRIGGER IF EXISTS UserDelete;
-DROP TRIGGER IF EXISTS EditPost;
-
+DROP TRIGGER IF EXISTS EditProduct;
+DROP Trigger IF EXISTS ;
 DELIMITER //
 
 CREATE TRIGGER UserDelete
-BEFORE DELETE ON user
+BEFORE DELETE ON Customer
 FOR EACH ROW
 BEGIN   
-    INSERT INTO user_history (user_id, username)
-    SELECT user_id, username
+    INSERT INTO Deleted_user (userid, username)
+    SELECT userid, username
     FROM user
-    WHERE user.user_id = OLD.user_id;
+    WHERE user.userid = OLD.userid;
 END
 //
 
@@ -18,20 +18,24 @@ CREATE TRIGGER UserUpdate
 BEFORE UPDATE ON user
 FOR EACH ROW
 BEGIN
-    INSERT INTO user_history VALUES(OLD.user_id, OLD.username, NOW());
+    INSERT INTO Deleted_user VALUES(OLD.userid, OLD.username, NOW());
 END
 //
 
-CREATE TRIGGER EditPost
-BEFORE UPDATE ON post
+CREATE TRIGGER Editshipment
+BEFORE UPDATE ON Orders
 FOR EACH ROW
 BEGIN
-    IF OLD.content != NEW.content OR OLD.approved != NEW.approved
+    IF OLD.shipdate != NEW.shipdate
     THEN
-        INSERT INTO post_history (post_id, user_id, old_content, new_content)
-        VALUES (OLD.post_id, OLD.user_id, OLD.content, NEW.content);
+        INSERT INTO Orders (shipdate)
+        VALUES (currentdate);
     END IF;
 END
 //
 
 DELIMITER ;
+
+
+
+
