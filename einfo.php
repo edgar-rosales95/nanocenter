@@ -153,15 +153,7 @@ if ($einfo->execute()) {
 </div>
 
 <br>
- 	<div id="slider">
-		<figure>
-			<img src="images/employees/peeps_listening_presentation.jpg" class="image-resize">
-			<img src="images/employees/peeps_working_laptop.jpg" class="image-resize">
-			<img src="images/employees/peeps_working_laugh.jpg" class="image-resize">
-			<img src="images/employees/peeps_working_presntation.jpg" class="image-resize">
-			<img src="images/employees/peeps_listening_presentation.jpg" class="image-resize">
-		</figure>
-	</div>
+ 
 	<script>
 	var favicon_images = [
 					'nanoCenter1.png',
