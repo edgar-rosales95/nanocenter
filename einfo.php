@@ -136,7 +136,7 @@ if ($einfo->execute()) {
 
 
 
-<br>
+<br><br><br><br>
  	<div id="slider">
 		<figure>
 			<img src="images/employees/peeps_listening_presentation.jpg" class="image-resize">
