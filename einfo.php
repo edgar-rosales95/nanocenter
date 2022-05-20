@@ -53,7 +53,7 @@ session_start();
 	</style>
 </head>
 <body>
-	<h1> Emlpoyee</h1>
+	<h1> Employee</h1>
 <div class="navbar">
 	<h3>
   	<a href="productmanagement.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
