@@ -125,10 +125,7 @@ session_start();
 </div>
 
 </div>
-<main>
-<div class="sidenav-main">
-	
-	<div class="sidenav-left"><h2>Products</h2>
+
 <?php
 
 require_once "getconnection.php";
@@ -149,9 +146,6 @@ if ($einfo->execute()) {
 }
 
 ?>
-</main>
-</div>
-
 <br>
  
 	<script>
