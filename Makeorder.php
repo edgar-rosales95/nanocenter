@@ -138,15 +138,14 @@ while ($row = $result->fetch_assoc()) {
 	<hr>
 	<div class="top"></div>
 	<div class="Shiporders">
-		<h1> Shipping Orders</h1>
+		<h1> Enter Product</h1>
 
-<form action="Shiporders.php" method = "POST"> 
-            <label for="orderid">Order ID</label>		<input type="text" name ="oid">
-			<input type="submit" value="Shipped" name= "submit">
+<form action="#" method = "POST"> 
+            <label for="orderid">Product Name</label>		<input type="text" name ="oid">
+			<input type="submit" value="submit" name= "submit">
 	   
 
 		</form>
-		<input type= 'button' onclick='javascript:history.back();return false;' value='Previous'>
 
 </div>
 	
@@ -185,44 +184,4 @@ setInterval(function() {
 </body>
 </html>
 
-<?php
-require_once "getconnection.php";
 
-
-$db = get_connection();
-	
-	echo "Orders that need to be shipped <br>"; 
-	
-	$query = $db->prepare("select orderid from Orders where shipdate IS NULL");
-	$query->execute();
-
-// Getting the results will bring the results from the database into PHP.
-// This lets you view each row as an associative array
-	$result = $query->get_result();
-
-	$rows = [];
-
-	while ($row = $result->fetch_assoc()) {
-		// Do something with each row: add it to an array, render HTML, etc.
-		$rows []= $row;
-
-		// This example just iterates over the columns of the rows and builds a string
-		$rowtext = "";
-
-		foreach($row as $column) {
-			$rowtext = $rowtext . "$column ";
-		}
-
-		echo "$rowtext <br>";
-	}
-	
-	$insert = $db->prepare("Update Orders set shipdate = CURRENT_DATE where orderid  = ?");
-
-	$insert->bind_param("i", $_POST["oid"]);
-        $insert->execute();
-
-	
-
-
-
-?>
