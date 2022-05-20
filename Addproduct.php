@@ -103,22 +103,22 @@ require_once "getconnection.php";
 //echo var_dump()
 
 $db = get_connection();
-	
-	$insert = $db->prepare("insert into Productype (Ptype,pname)
-		Values(?,?)");
 
+	$insert = $db->prepare("Insert into Producttype (ptype, pname)
+		Values(?, ?)");
+
+	$insert->bind_param("ss", $_POST["protype"], $_POST["proname"],
+		$_POST["ininventroy"]);
+		
+     		
 	$insert = $db->prepare("Insert into Product (pname, price, quantity)
 		Values(?, ?, ?)");
 
-	$insert->bind_param("ss", $_POST["protype"], $_POST["proname"]);
 
-
-	$insert->bind_param("sdi", $_POST["proname"], $_POST["Price"],
+	$insert->bind_param("sii", $_POST["proname"], $_POST["Price"],
 		$_POST["ininventroy"]);
 
         $insert->execute();
-
-	
 
 
 
