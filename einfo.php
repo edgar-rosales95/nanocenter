@@ -103,7 +103,7 @@ session_start();
 		.sidenav-main {
 			display: grid;
   			width: 100%;
-			height: 40%;
+			height: 30%;
   			background: #000000;
   			overflow-x: hidden;
 			border: 1px solid black;
@@ -129,7 +129,7 @@ session_start();
 <main>
 <div class="sidenav-main">
 	
-	<div class="sidenav-left"><h2>Products</h2>
+	<div class="sidenav-left"><h2>Employee Data</h2>
 <?php
 
 require_once "getconnection.php";
@@ -144,7 +144,6 @@ $einfo->bind_param("i", $_SESSION["wSSN"]);
 if ($einfo->execute()) {
     $result = $einfo->get_result();
     if ($edata = $result->fetch_assoc()) {
-        echo "Employee data:<br>";
 		echo "First Name: ";
         echo $edata["Fname"] . "<br>";
 		echo "Last Name: ";
