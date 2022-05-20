@@ -79,8 +79,6 @@ if ($einfo->execute()) {
     if ($edata = $result->fetch_assoc()) {
         echo "Employee data:<br>";
         echo $edata["Fname"] . " " . $edata["Lname"] . " " . $edata["DOB"] .  " " . $edata["Address"] .  " $ " . $edata["Salary"] .  "<br>";
-	    echo "Employee data:<br>";
-	    echo $edata["Fname"] . " " . $edata["Lname"] . "<br>";
     }
 }
 
