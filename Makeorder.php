@@ -35,13 +35,13 @@
 			.sidenav-left {
   			background: #ffffff;
 			margin: 10px;
-			border: 1px solid green;
+			border: 5px solid green;
 			text-align: center;
 		}
 			.sidenav-right {
   			background: #ffffff;
 			margin: 10px;
-			border: 1px solid green;
+			border: 5px solid green;
 			text-align: center;
 		}
 		footer{
@@ -68,7 +68,7 @@
 
 <div class="sidenav-main">
 	
-	<div class="sidenav-left">Products
+	<div class="sidenav-left"><h2>Products</h2>
 	<br>
 
 <?php
@@ -156,7 +156,7 @@ if (isset($_POST["dropdown"])) {
 
 
 </div>
-<div class="sidenav-right">Choose a Product</div>
+<div class="sidenav-right"><h2>Choose a Product</h2></div>
 	
 	</div>
 
