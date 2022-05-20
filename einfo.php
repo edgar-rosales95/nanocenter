@@ -145,8 +145,7 @@ if ($einfo->execute()) {
     $result = $einfo->get_result();
     if ($edata = $result->fetch_assoc()) {
         echo "Employee data:<br>";
-        echo "First Name: "$edata["Fname"] . " "<br>;
-		echo "Last Name:". $edata["Lname"] . " " . $edata["DOB"] .  " " . $edata["Address"] .  " $ " . $edata["Salary"] .  "<br>";
+        echo "First Name: "$edata["Fname"] . " " . $edata["Lname"] . " " . $edata["DOB"] .  " " . $edata["Address"] .  " $ " . $edata["Salary"] .  "<br>";
     }
 }
 
