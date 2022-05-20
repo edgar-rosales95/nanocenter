@@ -103,7 +103,7 @@ session_start();
 		.sidenav-main {
 			display: grid;
   			width: 100%;
-			height: 20%;
+			height: 40%;
   			background: #000000;
   			overflow-x: hidden;
 			border: 1px solid black;
