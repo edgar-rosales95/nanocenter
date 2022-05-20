@@ -5,6 +5,7 @@
 	<style type="text/css">
 		body{
 			background-color:#000000;
+			color: white;
 		}
 		h1{	
 			text-align:center;
@@ -121,39 +122,6 @@ while ($row = $result->fetch_assoc()) {
     echo "$rowtext <br>";
 }
 ?>
-
-<form action="hellodb.php" method="POST">
-<?php
-// Now let's build a select option dropdown from the rows
-echo "<select name='dropdown'>";
-
-foreach($rows as $row) {
-    $rowid = $row['pname'];
-    $rowdata = $row['price'];
-    echo "<option value='$rowid'>$rowdata</option>";
-}
-
-echo "</select>";
-?>
-
-</form>
-
-<?php
-if (isset($_POST["something"])) {
-    echo "You entered " . htmlspecialchars($_POST['something']) . " <br>";
-}
-
-if (isset($_POST["dropdown"])) {
-    for($i = 0; $i < count($rows); $i++) {
-        if ($rows[$i]['pname'] == $_POST['dropdown']) {
-            echo "You entered " . $_POST['dropdown'] . " <br>";
-        }
-    }
-}
-
-?>
-
-
 </div>
 <div class="sidenav-right"><h2>Choose a Product</h2></div>
 	
