@@ -105,8 +105,8 @@ require_once "getconnection.php";
 	
 
 
-	$delete = $db->prepare("delete from product where productid = ? (productid)
-		Values(?");
+	$delete = $db->prepare("delete from Product where productid = ? ");
+		
 
 	$delete->bind_param("i", $_POST["productid"]);
 
