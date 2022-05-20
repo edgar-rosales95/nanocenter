@@ -56,6 +56,7 @@
 		.bottom{	
         		position: absolute;
         		bottom: 0;
+				left: 0;
         		width: 100%;
         		color: #ffffff;
 			background-color:#006600;

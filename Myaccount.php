@@ -7,6 +7,8 @@
 			background-color:#000000;
 		}
 		.navbar {
+			position: fixed;
+			left: 0;
   			width: 100%;
   			background-color:#006600;
   			overflow: auto;
@@ -38,6 +40,7 @@
 			text-align:center;	
         		position: absolute;
         		bottom: 0;
+				left: 0;
         		width: 100%;
         		color: #ffffff;
 			background-color:#006600;
