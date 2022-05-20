@@ -15,6 +15,7 @@
 		}
 		body{
 			background-color:#000000;
+			color: white;
 		}
 		h1{
 			text-align:center;
@@ -124,14 +125,37 @@ require_once "getconnection.php";
 
 $db = get_connection();
 	
+	echo "Orders that need to be shipped <br>"; 
+	
+	$query = $db->prepare("select orderid from Orders where shipdate IS NULL");
+	$query->execute();
 
+// Getting the results will bring the results from the database into PHP.
+// This lets you view each row as an associative array
+	$result = $query->get_result();
 
+	$rows = [];
+
+	while ($row = $result->fetch_assoc()) {
+		// Do something with each row: add it to an array, render HTML, etc.
+		$rows []= $row;
+
+		// This example just iterates over the columns of the rows and builds a string
+		$rowtext = "";
+
+		foreach($row as $column) {
+			$rowtext = $rowtext . "$column ";
+		}
+
+		echo "$rowtext <br>";
+	}
+	
 	$insert = $db->prepare("Update Orders set shipdate = CURRENT_DATE where orderid  = ?");
 
 	$insert->bind_param("i", $_POST["oid"]);
         $insert->execute();
 
-	
+
 
 
 
