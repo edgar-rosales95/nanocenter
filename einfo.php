@@ -99,7 +99,20 @@ session_start();
 			width: 800;
 			height: 1400;
 		}
-
+		.sidenav-main {
+			display: grid;
+  			width: 100%;
+			height: 40%;
+  			background: #000000;
+  			overflow-x: hidden;
+			border: 1px solid black;
+		}
+			.sidenav-left {
+  			background: #000000;
+			margin: 10px;
+			border: 5px solid green;
+			text-align: center;
+		}
 	</style>
 </head>
 <body>
@@ -112,7 +125,10 @@ session_start();
 </div>
 
 </div>
-
+<main>
+<div class="sidenav-main">
+	
+	<div class="sidenav-left"><h2>Products</h2>
 <?php
 
 require_once "getconnection.php";
@@ -133,10 +149,10 @@ if ($einfo->execute()) {
 }
 
 ?>
+</main>
+</div>
 
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
  	<div id="slider">
 		<figure>
 			<img src="images/employees/peeps_listening_presentation.jpg" class="image-resize">
