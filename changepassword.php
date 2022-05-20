@@ -7,7 +7,7 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scaled=1.0">
-	<title> Change quantity</title>
+	<title> Change password</title>
 	<style type="text/css">
 		label{
 			display: block;
@@ -31,7 +31,7 @@ session_start();
 		.top{
 			margin-top: 100px;
 		}
-		.register{
+		.changepassword{
 			color:#00FF66;
 			margin:auto;
 			background:#2b2a33;
@@ -77,10 +77,10 @@ session_start();
 </head>
 <body>
 	<main>
-	<h1>Product Management</h1>
+	<h1>My Account</h1>
 	<hr>
 	<div class="top"></div>
-	<div class="register">
+	<div class="Changepassword">
 		<h1>Change Password</h1>
 
 <form action="changepassword.php" method = "POST"> 
