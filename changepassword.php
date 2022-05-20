@@ -3,11 +3,6 @@
 session_start();
 
 ?>
-
-
-
-
-
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -96,6 +91,33 @@ session_start();
 		</form>
 		<input type= 'button' onclick='javascript:history.back();return false;' value='Previous'>
 	</main>
+		<script>
+	var favicon_images = [
+					'nanoCenter1.png',
+					'nanoCenter1.png',
+					'nanoCenter2.png',
+					'nanoCenter2.png'
+                ],
+    image_counter = 0; // To keep track of the current image
+
+setInterval(function() {
+    // remove current favicon
+    if(document.querySelector("link[rel='icon']") !== null)
+        document.querySelector("link[rel='icon']").remove();
+    if(document.querySelector("link[rel='shortcut icon']") !== null)
+        document.querySelector("link[rel='shortcut icon']").remove();
+        
+    // add new favicon image
+    document.querySelector("head").insertAdjacentHTML('beforeend', '<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/gif">');
+    
+    // If last image then goto first image
+    // Else go to next image    
+    if(image_counter == favicon_images.length -1)
+        image_counter = 0;
+    else
+        image_counter++;
+}, 200);
+</script>
 	<footer>
 		<div class="bottom"><a href="contactinfo.html" style="color:#ffffff"><i class="fa fa-fw fa-user"></i>Customer Service</a> &copy; nanoCenter</div>
 	</footer>
