@@ -6,6 +6,7 @@
 		body{
 			background-color:#000000;
 			color: white;
+			font-size:25;
 		}
 		h1{	
 			text-align:center;
