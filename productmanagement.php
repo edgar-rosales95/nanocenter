@@ -90,7 +90,7 @@
 		}
 		.image-resize {
 			width: 800;
-			height: 600;
+			height: 1400;
 		}
 
 	</style>
