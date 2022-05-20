@@ -28,7 +28,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE 'AddPrduct'(productn varchar(100), prices decimal(7,2), amountin int(11))
+CREATE PROCEDURE 'AddPrduct'(productn varchar(100), prices float(7,2), amountin int(11))
 BEGIN 
 	START TRANSACTION;
 
@@ -63,10 +63,31 @@ BEGIN
 
        	IF quantity =  0 THEN
        	    SELECT NULL as pname, "product is out of stock" AS 'Error';
-	    --delete from product table 
- 	    -- delete from product type
+	   
 
 	DELETE FROM PRODUCT WHERE pname = productn AND quantity = 0;
+	DElETE FROM Producttype where pname = productn;
+
+	   
+
+	END IF;
+
+	COMMIT;
+END:
+//
+
+DELIMITER ;
+
+
+
+DELIMITER //
+
+CREATE PROCEDURE 'Ordertotal'(oid int(11))
+BEGIN 
+	START TRANSACTION;
+
+       select Customer.Fname, Customer.Lname, Customer.ID, Orders.orderid, Orders.orderdate,Orders.shipdate, Contains.productid, Contains.pname, sum(price) as "Order Total"  from Customer natural join Orders natural join Contains natural join Product  where Orders.customerid = Customer.ID and oid = Customer.ID group by Fname;	   
+
 	   
 
 	END IF;
