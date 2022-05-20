@@ -29,12 +29,11 @@
 		.top{
 			margin-top: 100px;
 		}
-		.register{
+		.Addproduct{
 			color:#00FF66;
 			margin:auto;
 			background:#2b2a33;
-			max-width:350px;:q
-
+			max-width:350px;
 			padding:10px;
 			border-radius:4px;
 		}
@@ -78,10 +77,11 @@
 	<h1>Product Management</h1>
 	<hr>
 	<div class="top"></div>
-	<div class="register">
+	<div class="Addproduct">
 		<h1>Add Product</h1>
 
 <form action="Addproduct.php" method = "POST"> 
+            <label for="ptype">Product Type</label>		<input type="text" name ="protype">
             <label for="pname">Product Name</label>		<input type="text" name ="proname">
             <label for="price">Price</label>			<input type="text" name ="Price">
             <label for="quantity">Quantity</label>		<input type="text" name ="ininventroy">
@@ -108,7 +108,7 @@ $db = get_connection();
 	$insert = $db->prepare("Insert into Product (pname, price, quantity)
 		Values(?, ?, ?)");
 
-	$insert->bind_param("sii", $_POST["proname"], $_POST["Price"],
+	$insert->bind_param("sdi", $_POST["proname"], $_POST["Price"],
 		$_POST["ininventroy"]);
 
         $insert->execute();
