@@ -55,8 +55,8 @@ session_start();
 	<h1> Emlpoyee</h1>
 <div class="navbar">
 	<h3>
-  	<a href="productmamagement.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
-	<a href="einfo.php"><i class="fa fa-fw fa-user"></i>My Account</a>
+  	<a href="productmanagement.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
+	<a href="Employee.php"><i class="fa fa-fw fa-user"></i>Home</a>
 	</h3>
 </div>
 
@@ -65,7 +65,7 @@ session_start();
 <?php
 
 require_once "getconnection.php";
-var_dump ($_SESSION);
+//var_dump ($_SESSION);
 
 $db = get_connection();
 
@@ -77,7 +77,7 @@ if ($einfo->execute()) {
     $result = $einfo->get_result();
     if ($edata = $result->fetch_assoc()) {
         echo "Employee data:<br>";
-        echo $edata["Fname"] . " " . $edata["Lname"] . "<br>";
+        echo $edata["Fname"] . " " . $edata["Lname"] . " " . $edata["DOB"] .  " " . $edata["Address"] .  " $ " . $edata["Salary"] .  "<br>";
     }
 }
 

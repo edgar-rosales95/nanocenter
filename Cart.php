@@ -90,7 +90,7 @@ function get_connection() {
 
 // Get a connection, prepare a query, and execute it
 $db = get_connection();
-$query = $db->prepare("select Orders.orderid,Fname, Lname, address, username, pname from Contains join Orders join Customer where ID = customerid  and Contains.orderid = Orders.orderid;;");
+$query = $db->prepare("select Orders.orderid,Fname, Lname, address, username, pname from Contains join Orders join Customer where ID = customerid  and Contains.orderid = Orders.orderid;");
 $query->execute();
 
 // Getting the results will bring the results from the database into PHP.

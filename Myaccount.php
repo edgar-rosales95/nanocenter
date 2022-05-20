@@ -49,7 +49,7 @@
 	<h1> My Account</h1>
 <div class="navbar">
 	<h3>
-  	<a href="Makeorder.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Create an Order</a>
+  	<a href="changepassword.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Change Password</a>
   	<a href="Cart.php"><i class="fa fa-fw fa-envelope"></i>Cart</a>
   	<a href="NanoCenter.php"><i class="fa fa-fw fa-user"></i>Main</a>
 	</h3>

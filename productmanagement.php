@@ -55,6 +55,9 @@
 	<a href="Deleteproduct.php"><i class="fa fa-fw fa-user"></i>Delete Product</a>
 	<a href="Changequantity.php"><i class="fa fa-fw fa-user"></i>Update Quantity</a>
 	<a href="Shiporders.php"><i class="fa fa-fw fa-user"></i>Order Shipping</a>
+	<a href="Employee.php"><i class="fa fa-fw fa-user"></i>Home</a>
+
+
 
 
 

@@ -81,7 +81,7 @@
 		<h1> Shipping Orders</h1>
 
 <form action="register.php" method = "POST"> 
-            <label for="productid">Product ID</label>		<input type="text" name ="productid">
+            <label for="orderid">Order ID</label>		<input type="text" name ="oid">
 			<input type="submit" value="Shipped" name= "submitd">
 	   
 
@@ -97,34 +97,18 @@
 require_once "getconnection.php";
 
 
-
-
-
-if (isset($_POST["Register"])){
-    unset($_POST["Register"]);
-//	echo var_dump($_POST);
-
-    $db = get_connection();
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    if (strlen($username) == 0 || strlen($password) == 0){
-	    $_SESSION['error'] = "Username and/or password cannot be empty!";
-	    header("Location: register.php");
-    }
-
+$db = get_connection();
 	
 
 
-	$insert = $db->prepare("Insert into Customer (pname, price, quantity)
-		Values(?, ?, ?)");
+	$insert = $db->prepare("Update Orders set shipdate = 'date' where orderid  = ? (orderid)
+		Values(?)");
 
-	$insert->bind_param("sfi", $_POST["firstname"], $_POST["lastname"],
-		$_POST["address"], $_POST["phone"], $_POST["username"], password_hash($_POST["password"], PASSWORD_DEFAULT));
-
+	$insert->bind_param("i", $_POST["iod"]);
         $insert->execute();
 
 	
 
 
-}
+
 ?>
