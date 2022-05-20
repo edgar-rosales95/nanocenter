@@ -26,20 +26,20 @@
 			display: grid;
   			width: 100%;
 			height: 70%;
-  			background: #ffffff;
+  			background: #000000;
   			overflow-x: hidden;
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 20px;
 			border: 1px solid black;
 		}
 			.sidenav-left {
-  			background: #ffffff;
+  			background: #000000;
 			margin: 10px;
 			border: 5px solid green;
 			text-align: center;
 		}
 			.sidenav-right {
-  			background: #ffffff;
+  			background: #000000;
 			margin: 10px;
 			border: 5px solid green;
 			text-align: center;
@@ -123,7 +123,6 @@ while ($row = $result->fetch_assoc()) {
 ?>
 
 <form action="hellodb.php" method="POST">
-    <label>Enter something: <input type="text" name="something"></label>
 <?php
 // Now let's build a select option dropdown from the rows
 echo "<select name='dropdown'>";
@@ -136,7 +135,7 @@ foreach($rows as $row) {
 
 echo "</select>";
 ?>
-    <input type="submit">
+
 </form>
 
 <?php
