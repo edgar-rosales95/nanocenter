@@ -11,6 +11,7 @@ session_start();
 	<style type="text/css">
 		body{
 			background-color:#000000;
+			color:white;
 		}
 		.navbar {
   			width: 100%;
@@ -65,7 +66,7 @@ session_start();
 <?php
 
 require_once "getconnection.php";
-var_dump ($_SESSION);
+//var_dump ($_SESSION);
 
 $db = get_connection();
 
@@ -76,8 +77,8 @@ $einfo->bind_param("i", $_SESSION["wSSN"]);
 if ($einfo->execute()) {
     $result = $einfo->get_result();
     if ($edata = $result->fetch_assoc()) {
-        echo "Employee data:<br>";
-        echo $edata["Fname"] . " " . $edata["Lname"] . "<br>";
+	    echo "Employee data:<br>";
+	    echo $edata["Fname"] . " " . $edata["Lname"] . "<br>";
     }
 }
 
