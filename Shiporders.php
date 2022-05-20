@@ -155,7 +155,7 @@ $db = get_connection();
 	$insert->bind_param("i", $_POST["oid"]);
         $insert->execute();
 
-
+	header("Location: Shiporders.php");
 
 
 
