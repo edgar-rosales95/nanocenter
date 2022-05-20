@@ -129,7 +129,7 @@ session_start();
 <main>
 <div class="sidenav-main">
 	
-	<div class="sidenav-left"><h2>Employee Data</h2>
+	<div class="sidenav-left"><h2>Employee Information</h2>
 <?php
 
 require_once "getconnection.php";
