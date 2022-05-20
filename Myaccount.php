@@ -7,7 +7,6 @@
 			background-color:#000000;
 		}
 		.navbar {
-			position: fixed;
 			left: 0;
   			width: 100%;
   			background-color:#006600;
@@ -37,15 +36,63 @@
 			text-align:center;
 		}
 		#bottom {
+			position: fixed;
+			left: 0;
 			text-align:center;	
-        		position: absolute;
         		bottom: 0;
-				left: 0;
         		width: 100%;
         		color: #ffffff;
 			background-color:#006600;
 			padding: 15px 0;
       		}
+					#slider{
+			overflow: hidden;
+		}
+		#slider figure{
+			position: relative;
+			width:500%;
+			margin: 0;
+			left 0;
+		animation: 20s slider infinite;
+		}
+		#slider figure img{
+			float: left;
+			width: 20%;
+		}
+		@keyframes slider{
+			0% {
+				left: 0%;
+			}
+			20% {
+				left: 0%;
+			}
+			25% {
+				left: -100%;
+			}
+			45% {
+				left: -100%;
+			}
+			50% {
+				left: -200%;
+			}
+			70% {
+				left: -200%;
+			}
+			75% {
+				left: -300%;
+			}
+			95% {
+				left: -300%;
+			}
+			100% {
+				left: -400%;
+			}
+		}
+		.image-resize {
+			width: 800;
+			height: 1400;
+		}
+
 	</style>
 </head>
 <body>
@@ -59,6 +106,15 @@
 </div>
 
 <br>
+	<div id="slider">
+		<figure>
+			<img src="images/employees/peeps_listening_presentation.jpg" class="image-resize">
+			<img src="images/employees/peeps_working_laptop.jpg" class="image-resize">
+			<img src="images/employees/peeps_working_laugh.jpg" class="image-resize">
+			<img src="images/employees/peeps_working_presntation.jpg" class="image-resize">
+			<img src="images/employees/peeps_listening_presentation.jpg" class="image-resize">
+		</figure>
+	</div>
 	<script>
 	var favicon_images = [
 					'nanoCenter1.png',
