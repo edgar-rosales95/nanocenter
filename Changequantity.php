@@ -28,7 +28,7 @@
 		.top{
 			margin-top: 100px;
 		}
-		.register{
+		.Changequantity{
 			color:#00FF66;
 			margin:auto;
 			background:#2b2a33;
@@ -77,10 +77,10 @@
 	<h1>Product Management</h1>
 	<hr>
 	<div class="top"></div>
-	<div class="register">
+	<div class="Changequantity">
 		<h1>Change Quantity</h1>
 
-<form action="register.php" method = "POST"> 
+<form action="Changequantity.php" method = "POST"> 
             <label for="productid">Product ID</label>		<input type="text" name ="productid">
             <label for="quantity">New Quantity</label>		<input type="text" name ="quantity">
 			<input type="submit" value="Update" name= "submit">
@@ -101,26 +101,16 @@ require_once "getconnection.php";
 
 
 
-if (isset($_POST["Register"])){
-    unset($_POST["Register"]);
+if (isset($_POST["Changequantity"])){
+    unset($_POST["Changequantity"]);
 //	echo var_dump($_POST);
 
-    $db = get_connection();
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    if (strlen($username) == 0 || strlen($password) == 0){
-	    $_SESSION['error'] = "Username and/or password cannot be empty!";
-	    header("Location: register.php");
-    }
-
-	
+    $db = get_connection();	
 
 
-	$insert = $db->prepare("Insert into Customer (pname, price, quantity)
-		Values(?, ?, ?)");
+	$insert = $db->prepare("update Product set quantity = ? where productid = ?");
 
-	$insert->bind_param("sfi", $_POST["firstname"], $_POST["lastname"],
-		$_POST["address"], $_POST["phone"], $_POST["username"], password_hash($_POST["password"], PASSWORD_DEFAULT));
+	$insert->bind_param("ii", $_POST["quantity"], $_POST["productid"]);
 
         $insert->execute();
 
