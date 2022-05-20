@@ -69,6 +69,7 @@
 <div class="sidenav-main">
 	
 	<div class="sidenav-left">Products
+	<br>
 
 <?php
 
