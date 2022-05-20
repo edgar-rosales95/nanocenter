@@ -11,7 +11,8 @@
 			color:#00FF66;
 		}
 		h2{
-			color:#00FF66;		
+			color:#00FF66;
+			text-align: center;			
 		}
 		h3{
 			text-align:absolute;
@@ -21,16 +22,27 @@
 			text-align:center;
 			color:#00FF66;
 		}
-		.sidenav {
-			height:70%;
-  			width: 500px;
-  			position: left;
-  			z-index: 1;
-  			top: 20px;
-  			left: 20px;
+		.sidenav-main {
+			display: grid;
+  			width: 100%;
+			height: 70%;
   			background: #ffffff;
   			overflow-x: hidden;
-  			padding: 1px 0;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 20px;
+			border: 1px solid black;
+		}
+			.sidenav-left {
+  			background: #ffffff;
+			margin: 10px;
+			border: 1px solid green;
+			text-align: center;
+		}
+			.sidenav-right {
+  			background: #ffffff;
+			margin: 10px;
+			border: 1px solid green;
+			text-align: center;
 		}
 		footer{
 			text-align:center;
@@ -52,10 +64,11 @@
 <br>
 <hr>
 	<h3><a href="NanoCenter.php" style="color:#ffffff">Home</a>
-	<h2> Select a Product </h2>
+	<h2> Our Products </h2>
 
-<div class="sidenav">
-	<h4>Products</h4>
+<div class="sidenav-main">
+	
+	<div class="sidenav-left">Products
 
 <?php
 
@@ -140,7 +153,12 @@ if (isset($_POST["dropdown"])) {
 
 ?>
 
+
 </div>
+<div class="sidenav-right">Choose a Product</div>
+	
+	</div>
+
 	<script>
 	var favicon_images = [
 					'nanoCenter1.png',
