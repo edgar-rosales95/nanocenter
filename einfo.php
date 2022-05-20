@@ -122,8 +122,13 @@ session_start();
   	<a href="productmanagement.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
 	<a href="Employee.php"><i class="fa fa-fw fa-user"></i>Home</a>
 	</h3>
+</div>
 
-
+</div>
+<main>
+<div class="sidenav-main">
+	
+	<div class="sidenav-left"><h2>Products</h2>
 <?php
 
 require_once "getconnection.php";
@@ -144,10 +149,19 @@ if ($einfo->execute()) {
 }
 
 ?>
-
+</main>
 </div>
+
 <br>
- 
+ 	<div id="slider">
+		<figure>
+			<img src="images/employees/peeps_listening_presentation.jpg" class="image-resize">
+			<img src="images/employees/peeps_working_laptop.jpg" class="image-resize">
+			<img src="images/employees/peeps_working_laugh.jpg" class="image-resize">
+			<img src="images/employees/peeps_working_presntation.jpg" class="image-resize">
+			<img src="images/employees/peeps_listening_presentation.jpg" class="image-resize">
+		</figure>
+	</div>
 	<script>
 	var favicon_images = [
 					'nanoCenter1.png',
