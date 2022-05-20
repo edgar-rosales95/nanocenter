@@ -122,9 +122,7 @@ session_start();
   	<a href="productmanagement.php" style="color:#ffffff"><i class="fa fa-fw fa-home"></i>Product managment </a>
 	<a href="Employee.php"><i class="fa fa-fw fa-user"></i>Home</a>
 	</h3>
-</div>
 
-</div>
 
 <?php
 
@@ -146,6 +144,8 @@ if ($einfo->execute()) {
 }
 
 ?>
+
+</div>
 <br>
  
 	<script>
