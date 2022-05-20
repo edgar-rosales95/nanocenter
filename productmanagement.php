@@ -7,7 +7,6 @@
 			background-color:#000000;
 		}
 		.navbar {
-			position: fixed;
 			left: 0;
   			width: 100%;
   			background-color:#006600;
@@ -38,7 +37,7 @@
 		}
 		#bottom {
 			text-align:center;	
-        		position: absolute;
+        		position: fixed;
         		bottom: 0;
 				left: 0;
         		width: 100%;
@@ -46,6 +45,50 @@
 			background-color:#006600;
 			padding: 15px 0;
       		}
+		#slider{
+			overflow: hidden;
+		}
+		#slider figure{
+			position: relative;
+			width:500%;
+			margin: 0;
+			left 0;
+		animation: 20s slider infinite;
+		}
+		#slider figure img{
+			float: left;
+			width: 20%;
+		}
+		@keyframes slider{
+			0% {
+				left: 0%;
+			}
+			20% {
+				left: 0%;
+			}
+			25% {
+				left: -100%;
+			}
+			45% {
+				left: -100%;
+			}
+			50% {
+				left: -200%;
+			}
+			70% {
+				left: -200%;
+			}
+			75% {
+				left: -300%;
+			}
+			95% {
+				left: -300%;
+			}
+			100% {
+				left: -400%;
+			}
+		}
+
 	</style>
 </head>
 <body>
@@ -61,6 +104,15 @@
 </div>
 
 <br>
+	<div id="slider">
+		<figure>
+			<img src="/images/product_managment/center_view_warehosue.jpg">
+			<img src="/images/product_managment/peeps_working_masses.jpg">
+			<img src="/images/product_managment/top_view_warehouse.jpg">
+			<img src="newfans2.jpg">
+			<img src="newgpu.jpg">
+		</figure>
+	</div>
 	<script>
 	var favicon_images = [
 					'nanoCenter1.png',
