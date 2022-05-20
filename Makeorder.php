@@ -58,6 +58,17 @@
 			background-color:#006600;
 			padding:15px 0;
 		}
+				.top{
+			margin-top: 100px;
+		}
+		.Shiporders{
+			color:#00FF66;
+			margin:auto;
+			background:#2b2a33;
+			max-width:350px;
+			padding:10px;
+			border-radius:4px;
+		}
 </style>
 </head>
 	<body>
@@ -123,7 +134,21 @@ while ($row = $result->fetch_assoc()) {
 }
 ?>
 </div>
-<div class="sidenav-right"><h2>Choose a Product</h2></div>
+<div class="sidenav-right"><h2>Choose a Product</h2>
+	<hr>
+	<div class="top"></div>
+	<div class="Shiporders">
+		<h1> Shipping Orders</h1>
+
+<form action="Shiporders.php" method = "POST"> 
+            <label for="orderid">Order ID</label>		<input type="text" name ="oid">
+			<input type="submit" value="Shipped" name= "submit">
+	   
+
+		</form>
+		<input type= 'button' onclick='javascript:history.back();return false;' value='Previous'>
+
+</div>
 	
 	</div>
 
@@ -160,3 +185,44 @@ setInterval(function() {
 </body>
 </html>
 
+<?php
+require_once "getconnection.php";
+
+
+$db = get_connection();
+	
+	echo "Orders that need to be shipped <br>"; 
+	
+	$query = $db->prepare("select orderid from Orders where shipdate IS NULL");
+	$query->execute();
+
+// Getting the results will bring the results from the database into PHP.
+// This lets you view each row as an associative array
+	$result = $query->get_result();
+
+	$rows = [];
+
+	while ($row = $result->fetch_assoc()) {
+		// Do something with each row: add it to an array, render HTML, etc.
+		$rows []= $row;
+
+		// This example just iterates over the columns of the rows and builds a string
+		$rowtext = "";
+
+		foreach($row as $column) {
+			$rowtext = $rowtext . "$column ";
+		}
+
+		echo "$rowtext <br>";
+	}
+	
+	$insert = $db->prepare("Update Orders set shipdate = CURRENT_DATE where orderid  = ?");
+
+	$insert->bind_param("i", $_POST["oid"]);
+        $insert->execute();
+
+	
+
+
+
+?>
